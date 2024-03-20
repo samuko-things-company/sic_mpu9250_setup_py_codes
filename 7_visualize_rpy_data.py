@@ -34,6 +34,7 @@ def euler_from_quaternion(x, y, z, w):
 
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
+
 for i in range(30):
   t.sleep(1.0)
   print(i+1, " sec")

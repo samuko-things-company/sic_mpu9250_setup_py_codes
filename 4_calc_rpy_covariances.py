@@ -6,7 +6,11 @@ import numpy as np
 # portName = '/dev/ttyACM0'
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
-time.sleep(5)
+
+for i in range(10):
+  time.sleep(1.0)
+  print(i+1, " sec")
+  
 
 no_of_samples = 1000
 

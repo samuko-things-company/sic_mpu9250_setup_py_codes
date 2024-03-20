@@ -45,6 +45,7 @@ def animate(i):
 # portName = '/dev/ttyACM0'
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
+
 for i in range(30):
   time.sleep(1.0)
   print(i+1, " sec")

@@ -12,7 +12,10 @@ from sic_pyserial_lib import SIC # samuko IMU compute
 # portName = '/dev/ttyACM0'
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
-time.sleep(5)
+
+for i in range(10):
+  time.sleep(1.0)
+  print(i+1, " sec")
 
 
 # How many sensor samples we want to store
