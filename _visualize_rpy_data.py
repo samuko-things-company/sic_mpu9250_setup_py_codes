@@ -46,8 +46,7 @@ myObj = compound([myBox])
 print("Started")
 while True:
   roll, pitch, yaw = imu.get('rpy-est') #without heading
-
-  # yaw = imu.get('heading') # with heading
+  yaw = imu.get('heading') # with heading
 
   # print(m.degrees(roll), m.degrees(pitch), m.degrees(yaw))
 

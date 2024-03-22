@@ -14,10 +14,6 @@ for i in range(5):
 
 no_of_samples = 1000
 
-roll_rate_arr = []
-pitch_rate_arr = []
-yaw_rate_arr = []
-
 lin_accx_arr = []
 lin_accy_arr = []
 lin_accz_arr = []
