@@ -4,7 +4,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
-from scipy import linalg
 
 import time
 from sic_pyserial_lib import SIC # samuko IMU compute
@@ -14,7 +13,7 @@ from sic_pyserial_lib import SIC # samuko IMU compute
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
 
-for i in range(10):
+for i in range(5):
   time.sleep(1.0)
   print(i+1, " sec")
 

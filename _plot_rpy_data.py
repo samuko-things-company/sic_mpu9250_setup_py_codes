@@ -9,8 +9,8 @@ from sic_pyserial_lib import SIC # samuko IMU compute
 def animate(i):
     global imu, axes, rollDataList, pitchDataList, yawDataList, dataPoints
 
-    # roll, pitch, yaw = imu.get('acc-cal')
-    roll, pitch, yaw = imu.get('rpy-est')
+    roll, pitch, yaw = imu.get('rpy-est') #without heading
+    yaw = imu.get('heading') # with heading
 
     rollDataList.append(roll)
     pitchDataList.append(pitch)
@@ -46,7 +46,7 @@ def animate(i):
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
 
-for i in range(30):
+for i in range(15):
   time.sleep(1.0)
   print(i+1, " sec")
 # time.sleep(30)

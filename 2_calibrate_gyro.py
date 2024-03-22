@@ -13,7 +13,7 @@ from sic_pyserial_lib import SIC # samuko IMU compute
 portName = '/dev/ttyUSB0'
 imu = SIC(portName)
 
-for i in range(10):
+for i in range(5):
   time.sleep(1.0)
   print(i+1, " sec")
 
@@ -113,33 +113,3 @@ def run_caliberation():
 if __name__ == '__main__':
     run_caliberation()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def get_published_info(data):
-#     raw_data = data.data
-#     mylist = raw_data.split(',')
-    
-#     accx = float(mylist[0])
-#     accy = float(mylist[1])
-#     accz = float(mylist[2])
-
-#     # print(accx, accy, accz)
-#     # rospy.loginfo('received: %s', raw_data)
-
-
-# def subscribing():
-#     rospy.init_node(node_name, anonymous=True) #receiver node
-#     rospy.Subscriber(sub_topic, String, get_published_info)
-
-# subscribing()
