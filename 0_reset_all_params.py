@@ -1,5 +1,5 @@
 import time
-from sic_pyserial_lib import SIC # samuko IMU compute
+from sic_mpu9250_serial_comm import SIC # samuko IMU compute
 
 
 # portName = '/dev/ttyACM0'

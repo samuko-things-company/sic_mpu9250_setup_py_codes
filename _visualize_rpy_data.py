@@ -2,7 +2,7 @@ from vpython import *
 import numpy as np
 import time as t
 import math as m
-from sic_pyserial_lib import SIC # samuko IMU compute
+from sic_mpu9250_serial_comm import SIC # samuko IMU compute
 
 
 portName = '/dev/ttyUSB0'
