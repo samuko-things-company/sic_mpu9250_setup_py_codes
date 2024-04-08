@@ -17,7 +17,7 @@ toRad = 2*np.pi/360
 toDeg = 1/toRad
 
 
-
+filterGain = 0.1 # default value = 0.1
 
 
 def main():
@@ -25,9 +25,9 @@ def main():
   # Set Gain of the filter.
   # Higher values lead to faster convergence but more noise.
   # Lower values lead to slower convergence but smoother signal
-  isSuccessful = imu.send("gain", 0.1)
-  filterGain = imu.get("gain")
-  print("Started with Filter Gain: ", filterGain)
+  isSuccessful = imu.send("gain", filterGain)
+  gain = imu.get("gain")
+  print("Started with Filter Gain: ", gain)
   #----------------------------------------------------------------#
 
 
