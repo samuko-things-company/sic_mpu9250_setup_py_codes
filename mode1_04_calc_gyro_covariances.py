@@ -19,7 +19,8 @@ pitch_rate_arr = []
 yaw_rate_arr = []
 
 
-if __name__ == "__main__":
+
+def main():
   for i in range(no_of_samples):
     r_rate, p_rate, y_rate = imu.get('gyro-cal')
     roll_rate_arr.append(r_rate)
@@ -50,3 +51,15 @@ if __name__ == "__main__":
   print('stored gy_variance =', pitch_rate_variance)
   print('stored gz_variance =', yaw_rate_variance)
   print("")
+
+
+if __name__ == "__main__":
+  # check if it's the calibration code running
+  mode = int(imu.get("mode"))
+  try:
+    if mode == 1:
+      main()
+    else:
+      raise Exception("ERROR: Cannot Excecute Code, Upload Calibration Code")
+  except Exception as e:
+    print(e)

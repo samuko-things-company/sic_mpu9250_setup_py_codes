@@ -236,10 +236,15 @@ def animate(i):
         pass
 
 
-
-
 if __name__ == "__main__":
-  fig.canvas.mpl_connect('button_press_event', onClick)    
-  anim = FuncAnimation(fig, animate, frames = np.arange(0, 10000, 1), interval=50)
-
-  plt.show()
+  # check if it's the calibration code running
+  mode = int(imu.get("mode"))
+  try:
+    if mode == 1:
+      fig.canvas.mpl_connect('button_press_event', onClick)    
+      anim = FuncAnimation(fig, animate, frames = np.arange(0, 10000, 1), interval=50)
+      plt.show()
+    else:
+      raise Exception("ERROR: Cannot Excecute Code, Upload Calibration Code")
+  except Exception as e:
+    print(e)
