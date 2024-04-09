@@ -19,7 +19,7 @@ lin_accy_arr = []
 lin_accz_arr = []
 
 
-if __name__ == "__main__":
+def main():
   for i in range(no_of_samples):
 
     lin_accx, lin_accy, lin_accz = imu.get('acc-cal')
@@ -50,3 +50,15 @@ if __name__ == "__main__":
   print('stored ay_variance =', lin_accy_variance)
   print('stored az_variance =', lin_accz_variance)
   print("")
+
+
+if __name__ == "__main__":
+  # check if it's the calibration code running
+  mode = int(imu.get("mode"))
+  try:
+    if mode == 1:
+      main()
+    else:
+      raise Exception("ERROR: Cannot Excecute Code, Upload Calibration Code")
+  except Exception as e:
+    print(e)

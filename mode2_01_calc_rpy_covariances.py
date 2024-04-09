@@ -19,9 +19,9 @@ pitch_arr = []
 yaw_arr = []
 
 
-if __name__ == "__main__":
+def main():
   for i in range(no_of_samples):
-    r_rad, p_rad, y_rad = imu.get('rpy-raw')
+    r_rad, p_rad, y_rad = imu.get('rpy')
     roll_arr.append(r_rad)
     pitch_arr.append(p_rad)
     yaw_arr.append(y_rad)
@@ -49,3 +49,15 @@ if __name__ == "__main__":
   print('stored pitch_angle_variance =', pitch_rad_variance)
   print('stored yaw_angle_variance =', yaw_rad_variance)
   print("")
+
+
+if __name__ == "__main__":
+  # check if it's the madgwick filter code running
+  mode = int(imu.get("mode"))
+  try:
+    if mode == 2:
+      main()
+    else:
+      raise Exception("ERROR: Cannot Excecute Code, Upload Madgwick filter Code")
+  except Exception as e:
+    print(e)

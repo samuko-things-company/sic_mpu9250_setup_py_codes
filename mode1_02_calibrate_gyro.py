@@ -109,7 +109,13 @@ def run_caliberation():
 
 
 
-
-if __name__ == '__main__':
-    run_caliberation()
-
+if __name__ == "__main__":
+  # check if it's the calibration code running
+  mode = int(imu.get("mode"))
+  try:
+    if mode == 1:
+      run_caliberation()
+    else:
+      raise Exception("ERROR: Cannot Excecute Code, Upload Calibration Code")
+  except Exception as e:
+    print(e)
