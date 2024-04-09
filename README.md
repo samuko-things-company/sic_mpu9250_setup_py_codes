@@ -8,11 +8,9 @@ This is a child project of the **`sic_mpu9250`** project. it consist of a set of
 - Download (by clicking on the green Code button above) or clone the repo into your PC
 	> you can use this command if you want to clone the repo:
   >
-	>  ```git clone https://github.com/samuko-things-company/smc_app.git``` 
+	>  ```git clone https://github.com/samuko-things-company/sic_mpu9250_setup_py_codes.git``` 
 
-- Ensure you have the **`smc_l298n_pid_driver module`** interfaced with your preferred motors and connected to the PC.
-
-- Install the following python packages before you run the application
+- Install the following python packages before you run the application codes
 	> PySerial:
 	> ```pip3 install pyserial``` 
   >
@@ -22,10 +20,11 @@ This is a child project of the **`sic_mpu9250`** project. it consist of a set of
   > Vpython:
 	>  ```pip3 install vpython``` 
 
-- ensure it is the calibration code that is running in the driver module (i.e you should see the blue LED turn on). if not, upload it. It also comes by default with the module.
+- Connect the driver to your PC and run each step by step code to calibrate and setup the IMU.
+  > **NOTE:** the `mode1` codes require that the `calibration code` is uploaded and running on the sic_mpu9250_driver module (i.e you should see the blue LED turned on).
 
-- Connect the driver to your PC and run each step by step code 0 to 6 to calibrate and setup the IMU. the `_vizualize_rpy_data.py` and `_plot_rpy_data.py` codes will not work with the calibration code, only the ros2 package works with the calibration code.
+  > **NOTE:** the `mode2` codes require that the `madgwick filter code` is uploaded and running on the sic_mpu9250_driver module (i.e you should see the green LED turned on).
 
-- you can now use it with your ros2 project using the [sic_mpu9250_ros2_imu_tools](https://github.com/samuko-things-company/sic_mpu9250_ros2_imu_tools)  package.
+- after complete setup, you should leave the `madgwick filter code` (i.e **MODE 2**) running on the sic_mpu9250_driver module.
 
-- to run the `_vizualize_rpy_data.py` and `_plot_rpy_data.py` code as well as use with your arduino project, the kalman filter code from the driver code must be uploaded to the module. you should see the green LED turn on
+- with the `madgwick filter code` (i.e **MODE 2**) uploaded and running on the driver module, you can use it with your prefered library - `sic_mpu9250_ros` or `sic_mpu9250_i2c_lib` or `sic_mpu9250_pyserial_lib` or `sic_mpu9250_cppserial_lib`.
